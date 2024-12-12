@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Search } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CheckCircle } from 'lucide-react'
 
-export default function Home() {
+export default function ProviderPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
@@ -21,59 +21,89 @@ export default function Home() {
       <main className="flex-grow">
         <section className="bg-gradient-to-r from-purple-700 to-indigo-800 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl font-bold mb-6">Find Local Services in Tunisia</h1>
-            <p className="text-xl mb-8">Connect with trusted service providers across Tunisia</p>
-            <div className="max-w-md mx-auto flex">
-              <Input placeholder="What service do you need?" className="rounded-r-none" />
-              <Button size="lg" className="rounded-l-none">
-                <Search className="mr-2 h-4 w-4" /> Search
-              </Button>
-            </div>
+            <h1 className="text-4xl font-bold mb-6">Become a Service Provider on SO&P</h1>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">Join our network of skilled professionals and grow your business in Tunisia</p>
+            <Button size="lg" asChild>
+              <Link href="/provider/signup">Get Started</Link>
+            </Button>
           </div>
         </section>
 
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">How SO&P Works</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Why Join SO&P?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="bg-[#1a237e] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">1</div>
-                <h3 className="text-xl font-semibold mb-2">Browse Services</h3>
-                <p>Explore a wide range of services offered by local Tunisian providers</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-indigo-100 text-indigo-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                <h3 className="text-xl font-semibold mb-2">Choose a Provider</h3>
-                <p className="text-gray-600">Compare profiles, reviews, and prices.</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-blue-100 text-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                <h3 className="text-xl font-semibold mb-2">Get It Done</h3>
-                <p className="text-gray-600">Your provider arrives and completes your task.</p>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
+                    Expand Your Reach
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Connect with customers across Tunisia looking for your services.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
+                    Flexible Schedule
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Choose your own hours and work when it&apos;s convenient for you.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
+                    Secure Payments
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  Get paid securely through our platform with multiple payment options.
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="bg-gray-100 py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Popular Services</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Home Cleaning', 'Handyman', 'Moving', 'Plumbing', 'Electrical', 'Painting', 'Lawn Care', 'Pest Control'].map((service) => (
-                <Button key={service} variant="outline" className="h-auto py-4 px-6 text-lg font-medium">
-                  {service}
-                </Button>
-              ))}
+            <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="bg-purple-100 text-purple-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                <h3 className="text-xl font-semibold mb-2">Sign Up</h3>
+                <p className="text-gray-600">Create your profile and list your services</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-indigo-100 text-indigo-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                <h3 className="text-xl font-semibold mb-2">Get Requests</h3>
+                <p className="text-gray-600">Receive job requests from clients in your area</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-blue-100 text-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                <h3 className="text-xl font-semibold mb-2">Complete Jobs</h3>
+                <p className="text-gray-600">Provide excellent service to your clients</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-100 text-green-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                <h3 className="text-xl font-semibold mb-2">Get Paid</h3>
+                <p className="text-gray-600">Receive secure payments for your work</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="py-16">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to offer your services?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">Join our network of skilled professionals and grow your business.</p>
+            <h2 className="text-3xl font-bold mb-6">Ready to grow your business?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">Join SO&P today and start connecting with customers who need your services.</p>
             <Button size="lg" asChild>
-              <Link href="/provider">Become a Service Provider</Link>
+              <Link href="/provider/signup">Become a Service Provider</Link>
             </Button>
           </div>
         </section>
@@ -116,7 +146,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p>&copy; 2024 SO&P - Service On & Provide. All rights reserved. Serving Tunisia.</p>
+            <p>&copy; 2024 SO&P - Service On & Provide. All rights reserved.</p>
           </div>
         </div>
       </footer>
