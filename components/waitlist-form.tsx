@@ -23,7 +23,7 @@ export default function WaitlistForm() {
     return (
       <div className="text-center text-green-600 dark:text-green-400">
         <p className="text-xl font-semibold">Thank you for joining our waitlist!</p>
-        <p className="mt-2">We'll keep you updated on our progress.</p>
+        <p className="mt-2">We ll keep you updated on our progress.</p>
       </div>
     )
   }

@@ -1,5 +1,4 @@
 import WaitlistForm from "@/components/waitlist-form"
-import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 
 export default function WaitlistPage() {
